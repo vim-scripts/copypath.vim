@@ -1,0 +1,29 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1456
+
+Usage:
+   This script adds two new command ":CopyPath" and ":CopyFileName".
+   You can use the ":CopyPath" command to copy file path to clipboard,
+   and you can use the ":CopyFileName" command to copy file name to clipboard.
+
+   :CopyPath
+       copy current editing file full path to clipboard.
+       And, if you set g:copypath_copy_to_unnamed_register option to 1 then,
+       copy file full path to unnamed register too.
+       Default, not copy to unnamed register.
+
+   :CopyFileName
+       copy current editing file name to clipboard.
+       And, if you set g:copypath_copy_to_unnamed_register option to 1 then,
+       copy file name to unnamed register too.
+       Default, not copy to unnamed register.
+
+Configuration:
+   g:copypath_copy_to_unnamed_register
+      set this option value to 1 then, copy file path and name to unnamed register too.
+  >
+      let g:copypath_copy_to_unnamed_register = 1
+  <
+
+Note:
+   o  To run this script, Vim needs to be compiled with "+clipboard" option.
+
