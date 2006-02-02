@@ -3,7 +3,7 @@
 " Name Of File: copypath.vim
 " Maintainer:   omi taku <mail@nanasi.jp>
 " URL:          http://nanasi.jp/
-" Script URL:
+" Script URL:   http://www.vim.org/scripts/script.php?script_id=1456
 " Last Change:  2006/02/03
 " Version:      0.1
 "
@@ -25,7 +25,9 @@
 "    :CopyFileName
 "        copy current editing file name to clipboard.
 "
+"
 " History:
+"    0.1.1   o  fix bug.
 "    0.1     o  Initial upload.
 
 
@@ -36,15 +38,11 @@ endif
 let loaded_copypath = 1
 
 function CopyPath()
-	redir @*
-	silent echo expand('%:p')
-	redir END
+	let @*=expand('%:p')
 endfunction
 
 function CopyFileName()
-	redir @*
-	silent echo expand('%:t')
-	redir END
+	let @*=expand('%:t')
 endfunction
 
 command! -nargs=0 CopyPath call CopyPath()
