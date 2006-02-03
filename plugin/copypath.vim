@@ -4,8 +4,8 @@
 " Maintainer:   omi taku <mail@nanasi.jp>
 " URL:          http://nanasi.jp/
 " Script URL:   http://www.vim.org/scripts/script.php?script_id=1456
-" Last Change:  2006/02/03
-" Version:      0.1
+" Last Change:  2006/02/04
+" Version:      0.1.2
 "
 " Installation:
 "    1. Copy the copypath.vim script to
@@ -13,6 +13,7 @@
 "       Refer to ':help add-plugin', ':help add-global-plugin' and ':help runtimepath'
 "       for more details about Vim plugins.
 "    2. Restart Vim.
+"    3. To run this script, Vim needs to be compiled with "+clipboard" option.
 "
 " Usage:
 "    This script adds two new command ":CopyPath" and ":CopyFileName".
@@ -26,7 +27,12 @@
 "        copy current editing file name to clipboard.
 "
 "
+" Note:
+"    o  To run this script, Vim needs to be compiled with "+clipboard" option.
+"
+"
 " History:
+"    0.1.2   o  document is updaed.
 "    0.1.1   o  fix bug.
 "    0.1     o  Initial upload.
 
