@@ -46,6 +46,7 @@
 "    o  To run this script, Vim needs to be compiled with "+clipboard" option.
 "
 " History:
+"    1.1     o  add copy relative path.
 "    1.0     o  change uploading archive file format to zip format.
 "    0.2     o  unnamed register copy option is added.
 "    0.1.2   o  document is updated.
@@ -72,6 +73,14 @@ function CopyPath()
     endif
 endfunction
 
+function CopyRelativePath()
+    let @*=expand('%p')
+    " copy unnamed register.
+    if g:copypath_copy_to_unnamed_register
+        let @"=expand('%p')
+    endif
+endfunction
+
 function CopyFileName()
     let @*=expand('%:t')
     " copy unnamed register.
@@ -80,8 +89,9 @@ function CopyFileName()
     endif
 endfunction
 
-command! -nargs=0 CopyPath     call CopyPath()
-command! -nargs=0 CopyFileName call CopyFileName()
+command! -nargs=0 CopyPath         call CopyPath()
+command! -nargs=0 CopyRelativePath call CopyRelativePath()
+command! -nargs=0 CopyFileName     call CopyFileName()
 
 finish
 
