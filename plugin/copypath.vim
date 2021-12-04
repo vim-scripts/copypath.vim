@@ -64,11 +64,18 @@ if !exists('g:copypath_copy_to_unnamed_register')
     let g:copypath_copy_to_unnamed_register = 0
 endif
 
+if !exists('g:copypath_copy_to_unnamed_plus_register')
+    let g:copypath_copy_to_unnamed_plus_register = 0
+endif
+
 function CopyPath()
     let @*=expand('%:p')
     " copy unnamed register.
     if g:copypath_copy_to_unnamed_register
         let @"=expand('%:p')
+    endif
+    if g:copypath_copy_to_unnamed_plus_register
+        let @+=expand('%:p')
     endif
 endfunction
 
@@ -77,6 +84,9 @@ function CopyFileName()
     " copy unnamed register.
     if g:copypath_copy_to_unnamed_register
         let @"=expand('%:t')
+    endif
+    if g:copypath_copy_to_unnamed_plus_register
+        let @+=expand('%:t')
     endif
 endfunction
 
