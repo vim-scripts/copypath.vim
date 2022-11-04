@@ -19,7 +19,9 @@ Usage:
 
 Configuration:
    g:copypath_copy_to_unnamed_register
-      set this option value to 1 then, copy file path and name to unnamed register too.
+      set this option value to 1 then, copy file path and name to `unnamedplus` register too.
+      because there are two independent clipboards: PRIMARY and CLIPBOARD on Linux, and  `CLIPBOARD`
+      is the `ctrl-c` and `ctrl-v` default register of X11 window system.
   >
       let g:copypath_copy_to_unnamed_register = 1
   <

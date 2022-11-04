@@ -68,7 +68,7 @@ function CopyPath()
     let @*=expand('%:p')
     " copy unnamed register.
     if g:copypath_copy_to_unnamed_register
-        let @"=expand('%:p')
+        let @+=expand('%:p')
     endif
 endfunction
 
@@ -76,7 +76,7 @@ function CopyFileName()
     let @*=expand('%:t')
     " copy unnamed register.
     if g:copypath_copy_to_unnamed_register
-        let @"=expand('%:t')
+        let @+=expand('%:t')
     endif
 endfunction
 
